@@ -5,5 +5,6 @@ function Get-PSInfo-Desktop
         InstanceID = ""
         CurrentCulture = ""
         CurrentUICulture = ""
+        ProcessID = ""
     }
 }

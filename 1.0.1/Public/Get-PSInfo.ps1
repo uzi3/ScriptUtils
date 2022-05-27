@@ -8,13 +8,14 @@
 
     Function PSDesktop
     {
-        $ImpObj = Get-PSInfo-Desktop
+        $ImpObj = Get-PSInfo-Desktop #This is a private function
         $HostData = Get-Host
 
         $ImpObj.Name = $HostData.Name
         $ImpObj.InstanceID = $HostData.InstanceId
         $ImpObj.CurrentCulture = $HostData.CurrentCulture
         $ImpObj.CurrentUICulture = $HostData.CurrentUICulture
+        $ImpObj.ProcessID = $PID
 
         $FinalObj = [PSCustomobject]$PSVersionTable
 
