@@ -1,0 +1,24 @@
+name: Publish_ScriptUtils_module
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build_and_publish:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Step to upload module to PSGallery
+      - name: Publish PS Module directly via command
+        shell: powershell
+        env:
+          NuGet_ApiKey: ${{ secrets.PS_GALLERY_KEY }}
+        run: |
+          Publish-Module -Path ./ScriptUtils -NuGetApiKey "NuGet_ApiKey" -Repository PSGallery -Verbose
