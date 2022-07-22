@@ -1,4 +1,4 @@
-name: Publish_ScriptUtils_module
+name: Publish_ScriptUtils_module_Using_PSCommand
 
 on:
   push:
