@@ -21,4 +21,6 @@ jobs:
         env:
           NuGet_ApiKey: ${{ secrets.PS_GALLERY_KEY }}
         run: |
-          Publish-Module -Path ./ScriptUtils -NuGetApiKey "NuGet_ApiKey" -Repository PSGallery -Verbose
+          (Get-Item .\).fullname
+          Get-ChildItem D:\ -Recurse | select FullName, LastWriteTime | ft -AutoSize -Wrap
+#          Publish-Module -Path ./ScriptUtils -NuGetApiKey "NuGet_ApiKey" -Repository PSGallery -Verbose
