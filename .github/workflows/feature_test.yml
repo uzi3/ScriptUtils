@@ -18,4 +18,4 @@ jobs:
       # Step to upload module to PSGallery
       - name: Test PS Command 1
         shell: powershell
-        run: Get-command
+        run: Get-childitem
