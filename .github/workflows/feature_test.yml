@@ -10,15 +10,19 @@ on:
 
 jobs:
   build_and_publish:
-    runs-on: windows-latest
-
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    
     steps:
       - uses: actions/checkout@v3
 
       # Step to upload module to PSGallery
-      - name: Test PS Command 1
+      - name: Test ScriptUtils commands
         shell: powershell
         run: |
+          $PSVersionTable | select PSVersion, PSEdition, OS
           Import-Module ./ScriptUtils
           Get-SubnetFormat "32"
           Get-SubnetFormat "255.255.255.128"
