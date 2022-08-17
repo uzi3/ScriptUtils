@@ -23,7 +23,7 @@ jobs:
         shell: pwsh
         run: |
           $PSVersionTable | select PSVersion, PSEdition, OS
-          Get-ChildItem ./ScriptUtils/1.1.0/Public/
+          Get-ChildItem ./ -Recurse | select fullname
           Import-Module ./ScriptUtils
           Get-SubnetFormat "32"
           Get-SubnetFormat "255.255.255.128"
