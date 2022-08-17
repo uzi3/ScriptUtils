@@ -12,7 +12,7 @@ jobs:
   build_and_publish:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest]
     runs-on: ${{ matrix.os }}
     
     steps:
@@ -20,8 +20,11 @@ jobs:
 
       # Step to upload module to PSGallery
       - name: Test ScriptUtils commands
+        env: 
+          Git: C:\Program Files\Git\bin\git.exe
         shell: pwsh
         run: |
+          git branch --show-current
           $PSVersionTable | select PSVersion, PSEdition, OS
           Get-ChildItem ./ -Recurse | select fullname
           Import-Module ./ScriptUtils
