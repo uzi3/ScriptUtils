@@ -29,7 +29,6 @@ jobs:
           Get-SubnetFormat 0.0.0.127
           Repair-FileName "File1/"
           Test-FileName "File1/"
-          Test-IfAdmin
           Test-Ipv4AddressFormat "192.168.1.1"
           Test-Ipv4AddressFormat "192.168.1.abs"
           Get-PSInfo
