@@ -9,10 +9,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_and_publish:
+  build_and_test:
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [windows-latest, ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     
     steps:
@@ -20,12 +20,8 @@ jobs:
 
       # Step to upload module to PSGallery
       - name: Test ScriptUtils commands
-        env: 
-          Git: C:\Program Files\Git\bin\git.exe
         shell: pwsh
         run: |
-          git branch --show-current
-          $PSVersionTable | select PSVersion, PSEdition, OS
           Get-ChildItem ./ -Recurse | select fullname
           Import-Module ./ScriptUtils
           Get-SubnetFormat "32"
