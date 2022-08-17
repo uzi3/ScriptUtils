@@ -31,3 +31,6 @@ jobs:
           Test-Ipv4AddressFormat "192.168.1.1"
           Test-Ipv4AddressFormat "192.168.1.abs"
           Get-PSInfo
+          Get-SubnetFormat "32"
+          $PSVersionTable | select PSVersion, PSEdition, OS
+          Get-SubnetFormat "32"
