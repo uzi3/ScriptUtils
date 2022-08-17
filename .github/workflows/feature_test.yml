@@ -22,7 +22,6 @@ jobs:
       - name: Test ScriptUtils commands
         shell: pwsh
         run: |
-          Get-ChildItem ./ -Recurse | select fullname
           Import-Module ./ScriptUtils
           Get-SubnetFormat "32"
           Get-SubnetFormat "255.255.255.128"
