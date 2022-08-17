@@ -23,12 +23,3 @@ jobs:
         shell: powershell
         run: |
           $PSVersionTable | select PSVersion, PSEdition, OS
-          Import-Module ./ScriptUtils
-          Get-SubnetFormat "32"
-          Get-SubnetFormat "255.255.255.128"
-          Get-SubnetFormat 0.0.0.127
-          Repair-FileName "File1/"
-          Test-FileName "File1/"
-          Test-IfAdmin
-          Test-Ipv4AddressFormat "192.168.1.1"
-          Test-Ipv4AddressFormat "192.168.1.abs"
