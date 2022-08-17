@@ -1,0 +1,21 @@
+name: feature_test
+
+on:
+  push:
+    branches: [ "feature_test" ]
+  pull_request:
+    branches: [ "feature_test" ]
+
+  workflow_dispatch:
+
+jobs:
+  build_and_publish:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Step to upload module to PSGallery
+      - name: Test PS Command 1
+        shell: powershell
+        run: Get-command
