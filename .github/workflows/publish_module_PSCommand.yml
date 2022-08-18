@@ -19,5 +19,5 @@ jobs:
       - name: Publish PS Module directly via command
         shell: powershell
         env:
-          NuGet_ApiKey: ${{ secrets.PS_GALLERY_KEY }}
+          NuGet_ApiKey: ${{ secrets.PS_GALLERY_NEWKEY }}
         run: Publish-Module -Path ./ScriptUtils -NuGetApiKey "NuGet_ApiKey" -Repository PSGallery -Verbose
