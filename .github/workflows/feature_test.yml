@@ -24,6 +24,3 @@ jobs:
         run: |
           Import-Module ./ScriptUtils
           Get-PSInfo
-          Get-SubnetFormat "32"
-          $PSVersionTable | select PSVersion, PSEdition, OS
-          Get-SubnetFormat "32"
