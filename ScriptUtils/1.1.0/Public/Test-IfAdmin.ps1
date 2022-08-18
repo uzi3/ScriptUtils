@@ -5,7 +5,14 @@ function Test-IfAdmin {
 
     Process
     {
-        ([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups.value -contains "S-1-5-32-544"
+        If ((Get-PSInfo).os -like "*windows*")
+        {
+            ([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups.value -contains "S-1-5-32-544"
+        }
+        else 
+        {
+            Write-Host "Unsupported OS: Test-IfAdmin function is limited to Windows OS"
+        }
     }
 
     <#

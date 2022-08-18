@@ -1,0 +1,26 @@
+name: feature_test
+
+on:
+  push:
+    branches: [ "feature_test" ]
+  pull_request:
+    branches: [ "feature_test" ]
+
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      # Step to upload module to PSGallery
+      - name: Test ScriptUtils commands
+        shell: pwsh
+        run: |
+          Import-Module ./ScriptUtils
+          Test-IfAdmin
