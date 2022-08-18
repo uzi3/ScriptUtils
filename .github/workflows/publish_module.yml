@@ -20,4 +20,4 @@ jobs:
         uses: pcgeek86/publish-powershell-module-action@v20
         id: publish-module
         with:
-          NuGetApiKey: ${{ secrets.PS_GALLERY_KEY }}
+          NuGetApiKey: ${{ secrets.PS_GALLERY_NEWKEY }}
