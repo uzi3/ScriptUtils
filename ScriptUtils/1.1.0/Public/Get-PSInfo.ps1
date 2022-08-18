@@ -3,6 +3,7 @@
     {
         $HostData = $PSVersionTable
         $HostData += Get-Host | ConvertTo-Json -WarningAction SilentlyContinue | ConvertFrom-Json -AsHashtable -WarningAction SilentlyContinue
+        $HostData.Add("ProcessID","$PID")
         [PSCustomObject]$HostData
     }
 
