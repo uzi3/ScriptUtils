@@ -20,4 +20,5 @@ jobs:
         shell: powershell
         env:
           NuGet_ApiKey: ${{ secrets.PS_GALLERY_KEY }}
-        run: Publish-Module -Path ./ScriptUtils -NuGetApiKey "NuGet_ApiKey" -Repository PSGallery -Verbose
+        run: Write-Host "NuGet_ApiKey"
+#        run: Publish-Module -Path ./ScriptUtils -NuGetApiKey "NuGet_ApiKey" -Repository PSGallery -Verbose
