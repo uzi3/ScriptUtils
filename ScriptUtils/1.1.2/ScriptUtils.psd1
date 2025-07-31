@@ -12,7 +12,7 @@
 RootModule = 'ScriptUtils.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.1.1'
+ModuleVersion = '1.1.2'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -128,7 +128,6 @@ PrivateData = @{
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''
-
 
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 # DefaultCommandPrefix = ''
